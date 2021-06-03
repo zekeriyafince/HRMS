@@ -1,5 +1,7 @@
 package com.zekeriyafince.hrms.business.abstracts;
 
+import com.zekeriyafince.hrms.core.utilities.results.DataResult;
+import com.zekeriyafince.hrms.core.utilities.results.Result;
 import com.zekeriyafince.hrms.entities.concretes.JobPosition;
 import java.util.List;
 
@@ -10,6 +12,7 @@ import java.util.List;
  */
 public interface JobPositionService {
 
-    List<JobPosition> getAll();
+    DataResult<List<JobPosition>> getAll();
 
+    Result add(JobPosition jobPosition);
 }
