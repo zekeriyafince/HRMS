@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "employers")
 @AllArgsConstructor
 @NoArgsConstructor
-@PrimaryKeyJoinColumn(name = "user_id", referencedColumnName = "id")
+@PrimaryKeyJoinColumn(name = "id", referencedColumnName = "id")
 @EqualsAndHashCode(callSuper = false)
 public class Employer extends User {
 
