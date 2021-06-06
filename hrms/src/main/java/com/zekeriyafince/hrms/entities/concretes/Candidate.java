@@ -18,8 +18,8 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name = "candidates")
-@PrimaryKeyJoinColumn(name = "user_id", referencedColumnName = "id")
 @EqualsAndHashCode(callSuper = false)
+@PrimaryKeyJoinColumn(name = "user_id", referencedColumnName = "id")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Candidate extends User {
@@ -30,7 +30,7 @@ public class Candidate extends User {
     @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "national_identity")
+    @Column(name = "national_idendity")
     private String nationalIdentityNumber;
 
     @Column(name = "birth_date")

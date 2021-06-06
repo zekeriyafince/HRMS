@@ -24,9 +24,10 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @Entity
-@Table(name = "users")
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "users")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class User {
 
     @Id
@@ -34,7 +35,7 @@ public class User {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "email")
+    @Column(name = "e_mail")
     private String email;
 
     @Column(name = "password")
