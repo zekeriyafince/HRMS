@@ -5,6 +5,8 @@
  */
 package com.zekeriyafince.hrms.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -41,4 +43,7 @@ public class EmployersActivationByEmployees {
     @Column(name = "is_confirmed")
     private boolean isConformed;
 
+    @Column(name = "created_date")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private LocalDate createdDate;
 }

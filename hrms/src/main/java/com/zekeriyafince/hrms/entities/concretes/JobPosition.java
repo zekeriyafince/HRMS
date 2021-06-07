@@ -1,5 +1,9 @@
 package com.zekeriyafince.hrms.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.sun.istack.NotNull;
+import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,6 +23,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "job_positions")
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "jobadvertisements"})
 public class JobPosition {
 
     @Id
@@ -28,5 +33,13 @@ public class JobPosition {
 
     @Column(name = "position")
     private String position;
+
+    @Column(name = "created_date")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private LocalDate date;
+
+    @NotNull
+    @Column(name = "is_active")
+    private boolean status;
 
 }
