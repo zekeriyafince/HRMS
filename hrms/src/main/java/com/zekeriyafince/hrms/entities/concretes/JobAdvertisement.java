@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -23,10 +24,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "job_advertisement")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "employers"})
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "employers"})
 public class JobAdvertisement {
 
     @Id
+    @GeneratedValue
     @Column(name = "id")
     private int id;
 
