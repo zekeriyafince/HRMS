@@ -4,6 +4,7 @@ import com.zekeriyafince.hrms.business.abstracts.JobAdvertisementService;
 import com.zekeriyafince.hrms.core.utilities.results.DataResult;
 import com.zekeriyafince.hrms.core.utilities.results.ErrorDataResult;
 import com.zekeriyafince.hrms.core.utilities.results.Result;
+import com.zekeriyafince.hrms.core.utilities.results.SuccessDataResult;
 import com.zekeriyafince.hrms.entities.concretes.JobAdvertisement;
 import java.util.HashMap;
 import java.util.List;
@@ -49,17 +50,17 @@ public class JobAdvertisementController {
 
     @GetMapping("getByGetAllIsActiveTrue")
     DataResult getByGetAllIsActiveTrue() {
-        return this.jobAdvertisementService.getByGetAllIsActiveTrue();
+        return new SuccessDataResult(this.jobAdvertisementService.getByGetAllIsActiveTrue(), "Aktif iş ilanları listelendi.");
     }
 
     @GetMapping("getAllSorted")
     DataResult getAllSorted() {
-        return this.jobAdvertisementService.getAllSorted();
+        return new SuccessDataResult(this.jobAdvertisementService.getAllSorted(), "Aktif iş ilanları tarihe göre listelendi.");
     }
 
     @GetMapping("getByIsActiveTrueAndEmployer_userId")
     DataResult getByIsActiveTrueAndEmployer_userId(@RequestParam int employerId) {
-        return this.jobAdvertisementService.getByIsActiveTrueAndEmployer_userId(employerId);
+        return new SuccessDataResult(this.jobAdvertisementService.getByIsActiveTrueAndEmployer_userId(employerId), "Firmanın aktif iş ilanları listelendi.");
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
