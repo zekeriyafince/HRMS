@@ -63,4 +63,9 @@ public class CandidateManager implements CandidateService {
         return new SuccesResult("Tebrikler ! Başarı ile kayıt oldunuz.");
     }
 
+    @Override
+    public DataResult<Candidate> getById(int candidateId) {
+        return new SuccessDataResult<Candidate>(this.candidateDao.getById(candidateId), "Candidate listed");
+    }
+
 }

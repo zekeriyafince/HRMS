@@ -13,4 +13,10 @@ public interface CandidateDao extends JpaRepository<Candidate, Integer> {
     boolean existsByEmail(String email);
 
     boolean existsByNationalIdentityNumber(String nationalIdentityNumber);
+
+    Candidate getByUserId(int userId);
+
+    Candidate getByNationalIdentityNumber(String nationalIdentityNumber);
+
+    Candidate getByEmail(String email);
 }

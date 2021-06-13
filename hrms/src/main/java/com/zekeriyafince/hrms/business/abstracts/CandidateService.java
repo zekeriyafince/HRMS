@@ -13,6 +13,7 @@ import java.util.List;
 public interface CandidateService {
 
     DataResult<List<Candidate>> gettAll();
+    DataResult<Candidate> getById(int candidateId);
 
     Result add(Candidate candidate);
 }

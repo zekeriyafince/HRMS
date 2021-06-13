@@ -12,4 +12,6 @@ import java.util.List;
 public interface CandidateCurriculumVitaeService {
 
     DataResult<List<CandidateCurriculumVitae>> getAll();
+
+    DataResult<CandidateCurriculumVitae> getById(int cvId);
 }

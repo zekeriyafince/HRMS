@@ -10,4 +10,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface CandidateCurriculumVitaeDao extends JpaRepository<CandidateCurriculumVitae, Integer> {
 
+    CandidateCurriculumVitae getByCandidateId(int candidateId);
 }

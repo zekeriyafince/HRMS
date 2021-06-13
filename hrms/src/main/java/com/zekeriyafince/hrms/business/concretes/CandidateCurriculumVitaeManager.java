@@ -28,4 +28,9 @@ public class CandidateCurriculumVitaeManager implements CandidateCurriculumVitae
     public DataResult<List<CandidateCurriculumVitae>> getAll() {
         return new SuccessDataResult<List<CandidateCurriculumVitae>>(this.candidateCurriculumVitaeDao.findAll(), "CV Havuzu");
     }
+
+    @Override
+    public DataResult<CandidateCurriculumVitae> getById(int cvId) {
+        return new SuccessDataResult<CandidateCurriculumVitae>(this.candidateCurriculumVitaeDao.getById(cvId), "CV listed");
+    }
 }

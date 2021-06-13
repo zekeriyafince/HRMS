@@ -35,7 +35,7 @@ public class CandidateCurriculumVitae {
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "candidate_id")
+    @JoinColumn(name = "candidate_id", referencedColumnName = "id", nullable = false)
     private Candidate candidate;
 
     @Column(name = "img_url")
@@ -66,6 +66,6 @@ public class CandidateCurriculumVitae {
     private List<SocialMediaLink> socialMediaLinks;
 
     @OneToMany(mappedBy = "candidateCurriculumVitae")
-    private List<Language> langues;
+    private List<Language> languages;
 
 }

@@ -31,5 +31,5 @@ public class School {
     private String name;
 
     @Column(name = "is_deleted")
-    private boolean isDelted;
+    private boolean isDeleted;
 }
