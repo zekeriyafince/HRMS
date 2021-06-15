@@ -1,12 +1,10 @@
 package com.zekeriyafince.hrms.entities.concretes;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
@@ -27,7 +25,7 @@ import lombok.NoArgsConstructor;
 @PrimaryKeyJoinColumn(name = "user_id", referencedColumnName = "id")
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "candidateCurriculumVitae"})
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "cv"})
 public class Candidate extends User {
 
     @Column(name = "first_name")
@@ -43,7 +41,7 @@ public class Candidate extends User {
     @Column(name = "birth_date")
     private Date dateOfBirth;
 
-    @JsonIgnore
-    @OneToOne(mappedBy = "candidate")
-    private List<CandidateCurriculumVitae> candidateCurriculumVitaes;
+    //@JsonIgnore
+    @OneToMany(mappedBy = "candidate")
+    private List<CandidateCurriculumVitae> cv;
 }

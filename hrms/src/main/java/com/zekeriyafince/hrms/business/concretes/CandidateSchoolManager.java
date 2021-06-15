@@ -28,6 +28,9 @@ public class CandidateSchoolManager implements CandidateSchoolService {
 
     @Override
     public Result add(CandidateSchool candidateSchool) {
+        if (candidateSchool.getFinishDate() == null) {
+            candidateSchool.setStatus("Devam");
+        }
         this.candidateSchoolDao.save(candidateSchool);
         return new SuccesResult("Okul Bilgisi Eklenildi.");
     }
@@ -35,6 +38,11 @@ public class CandidateSchoolManager implements CandidateSchoolService {
     @Override
     public DataResult<List<CandidateSchool>> getAll() {
         return new SuccessDataResult<List<CandidateSchool>>(this.candidateSchoolDao.findAll(), "Okul Bilgisi listelendi.");
+    }
+
+    @Override
+    public DataResult<List<CandidateSchool>> getAllByCandidateCurriculumVitae_CvIdOrderByFinishDateDesc(int cvId) {
+        return new SuccessDataResult<List<CandidateSchool>>(this.candidateSchoolDao.getAllByCandidateIdOrderByFinishDateDesc(cvId), "Okul Bilgisi listelendi.");
     }
 
 }

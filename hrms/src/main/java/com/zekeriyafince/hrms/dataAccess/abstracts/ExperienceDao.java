@@ -1,5 +1,6 @@
 package com.zekeriyafince.hrms.dataAccess.abstracts;
 
+import com.zekeriyafince.hrms.entities.concretes.CandidateCurriculumVitae;
 import com.zekeriyafince.hrms.entities.concretes.Experience;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -15,5 +16,5 @@ public interface ExperienceDao extends JpaRepository<Experience, Integer> {
 
     List<Experience> getAllByCandidateId(int candidateId);
 
-    List<Experience> getAllByCandidateIdOrderByFinishDateDesc(int candidateId);
+    List<Experience> getAllByCandidateCurriculumVitae_CvIdOrderByFinishDateDesc(int cvId);
 }

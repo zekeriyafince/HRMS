@@ -26,7 +26,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "candidate_curriculum_vitaes")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "candidateCurriculumVitae"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "cv"})
 public class CandidateCurriculumVitae {
 
     @Id
@@ -34,7 +34,7 @@ public class CandidateCurriculumVitae {
     @Column(name = "id")
     private int id;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "candidate_id", referencedColumnName = "id", nullable = false)
     private Candidate candidate;
 
@@ -53,19 +53,19 @@ public class CandidateCurriculumVitae {
     @Column(name = "is_deleted")
     private boolean isDeleted;
 
-    @OneToMany(mappedBy = "candidateCurriculumVitae")
+    @OneToMany(mappedBy = "cv")
     private List<CandidateSchool> candidateSchools;
 
-    @OneToMany(mappedBy = "candidateCurriculumVitae")
+    @OneToMany(mappedBy = "cv")
     private List<CandidateSkill> candidateSkills;
 
-    @OneToMany(mappedBy = "candidateCurriculumVitae")
+    @OneToMany(mappedBy = "cv")
     private List<Experience> experiences;
 
-    @OneToMany(mappedBy = "candidateCurriculumVitae")
+    @OneToMany(mappedBy = "cv")
     private List<SocialMediaLink> socialMediaLinks;
 
-    @OneToMany(mappedBy = "candidateCurriculumVitae")
+    @OneToMany(mappedBy = "cv")
     private List<Language> languages;
 
 }

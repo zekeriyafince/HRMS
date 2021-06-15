@@ -1,6 +1,7 @@
 package com.zekeriyafince.hrms.entities.dtos;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.zekeriyafince.hrms.entities.concretes.Candidate;
 import com.zekeriyafince.hrms.entities.concretes.CandidateCurriculumVitae;
 import com.zekeriyafince.hrms.entities.concretes.CandidateSchool;
 import com.zekeriyafince.hrms.entities.concretes.CandidateSkill;
@@ -24,7 +25,7 @@ import lombok.NoArgsConstructor;
 public class CurriculumVitaeWithCandidateDto {
 
     @JsonIgnore
-    private CandidateCurriculumVitae candidateCurriculumVitae;
+    private Candidate candidate;
     private String imgUrl;
     private String explanation;
     private LocalDate date;

@@ -35,7 +35,7 @@ public class Experience {
     @ManyToOne()
     @JsonProperty(access = Access.WRITE_ONLY)
     @JoinColumn(name = "cv_id")
-    private CandidateCurriculumVitae candidateCurriculumVitae;
+    private CandidateCurriculumVitae cv;
 
     @Column(name = "name")
     private String name;

@@ -20,4 +20,6 @@ public interface JobAdvertisementService {
     DataResult<List<JobAdvertisement>> getAllSorted();
 
     DataResult<List<JobAdvertisement>> getByIsActiveTrueAndEmployer_userId(int employerId);
+    
+    DataResult<List<JobAdvertisement>> findAllByIsActiveTrueOrderByCreatedDateAsc();
 }

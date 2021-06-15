@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @PrimaryKeyJoinColumn(name = "id", referencedColumnName = "id")
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobAdvertisements"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "jobAdvertisements"})
 @EqualsAndHashCode(callSuper = false)
 public class Employer extends User {
 
@@ -35,8 +35,8 @@ public class Employer extends User {
 
     @Column(name = "phone_number")
     private String phoneNumber;
-    
+
     @OneToMany(mappedBy = "employer")
-	List<JobAdvertisement> jobAdvertisements;
+    List<JobAdvertisement> jobAdvertisements;
 
 }

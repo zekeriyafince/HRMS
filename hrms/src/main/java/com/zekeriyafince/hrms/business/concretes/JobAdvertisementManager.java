@@ -57,4 +57,9 @@ public class JobAdvertisementManager implements JobAdvertisementService {
         return new SuccesResult("İlan durumu değiştirildi.");
     }
 
+    @Override
+    public DataResult<List<JobAdvertisement>> findAllByIsActiveTrueOrderByCreatedDateAsc() {
+        return new SuccessDataResult<List<JobAdvertisement>>(advertisementDao.findAllByIsActiveTrueOrderByCreatedDateAsc());
+    }
+
 }

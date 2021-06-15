@@ -26,7 +26,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "candidate_schools")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "candidate_curriculum_vitaes"})
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "cv"})
 public class CandidateSchool {
 
     @Id
@@ -37,7 +37,7 @@ public class CandidateSchool {
     @ManyToOne()
     @JsonProperty(access = Access.WRITE_ONLY)
     @JoinColumn(name = "cv_id")
-    private CandidateCurriculumVitae candidateCurriculumVitae;
+    private CandidateCurriculumVitae cv;
 
     @Column(name = "school_department_id")
     private int schoolDepartmentId;

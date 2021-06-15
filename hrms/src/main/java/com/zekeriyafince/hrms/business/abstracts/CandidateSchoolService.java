@@ -16,4 +16,6 @@ public interface CandidateSchoolService {
 
     DataResult<List<CandidateSchool>> getAll();
 
+    DataResult<List<CandidateSchool>> getAllByCandidateCurriculumVitae_CvIdOrderByFinishDateDesc(int cvId);
+
 }

@@ -45,19 +45,19 @@ public class CurriculumVitaeManager implements CurriculumVitaeService {
 
         CandidateCurriculumVitae candidateCurriculumVitae = this.candidateCurriculumVitaeService.getById(cvId).getData();
 
-        dto.getCandidateSchools().forEach(candidateSchool -> candidateSchool.setCandidateCurriculumVitae(candidateCurriculumVitae));
+        dto.getCandidateSchools().forEach(candidateSchool -> candidateSchool.setCv(candidateCurriculumVitae));
         dto.getCandidateSchools().forEach(candidateSchool -> this.candidateSchoolService.add(candidateSchool));
 
-        dto.getCandidateSkills().forEach(candidateSkill -> candidateSkill.setCandidateCurriculumVitae(candidateCurriculumVitae));
+        dto.getCandidateSkills().forEach(candidateSkill -> candidateSkill.setCv(candidateCurriculumVitae));
         dto.getCandidateSkills().forEach(candidateSkill -> this.candidateSkillService.add(candidateSkill));
 
-        dto.getExperiences().forEach(experience -> experience.setCandidateCurriculumVitae(candidateCurriculumVitae));
+        dto.getExperiences().forEach(experience -> experience.setCv(candidateCurriculumVitae));
         dto.getExperiences().forEach(experience -> this.experienceService.add(experience));
 
-        dto.getLanguages().forEach(language -> language.setCandidateCurriculumVitae(candidateCurriculumVitae));
+        dto.getLanguages().forEach(language -> language.setCv(candidateCurriculumVitae));
         dto.getLanguages().forEach(language -> this.languageService.add(language));
 
-        dto.getSocialMediaLinks().forEach(socialMediaLink -> socialMediaLink.setCandidateCurriculumVitae(candidateCurriculumVitae));
+        dto.getSocialMediaLinks().forEach(socialMediaLink -> socialMediaLink.setCv(candidateCurriculumVitae));
         dto.getSocialMediaLinks().forEach(socialMediaLink -> this.socialMediaLinkService.add(socialMediaLink));
 
         return new SuccesResult("Cv Kaydedildi.");

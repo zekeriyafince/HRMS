@@ -18,23 +18,28 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ExperienceManager implements ExperienceService {
-
+    
     private ExperienceDao experienceDao;
-
+    
     @Autowired
     public ExperienceManager(ExperienceDao experienceDao) {
         this.experienceDao = experienceDao;
     }
-
+    
     @Override
     public Result add(Experience experience) {
         this.experienceDao.save(experience);
         return new SuccesResult("Deneyim Bilgisi Eklenildi.");
     }
-
+    
     @Override
     public DataResult<List<Experience>> getAll() {
         return new SuccessDataResult<List<Experience>>(this.experienceDao.findAll(), "Deneyim Bilgisi listelendi.");
     }
-
+    
+    @Override
+    public DataResult<List<Experience>> getAllByCandidateCurriculumVitae_CvIdOrderByFinishDateDesc(int cvId) {
+        return new SuccessDataResult<List<Experience>>(this.experienceDao.getAllByCandidateCurriculumVitae_CvIdOrderByFinishDateDesc(cvId), "Deneyim Bilgisi listelendi.");
+    }
+    
 }
