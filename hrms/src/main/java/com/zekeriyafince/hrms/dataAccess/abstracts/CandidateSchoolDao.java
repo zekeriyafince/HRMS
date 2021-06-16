@@ -11,9 +11,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface CandidateSchoolDao extends JpaRepository<CandidateSchool, Integer> {
 
-    CandidateSchool getByCandidateId(int candidateId);
+    CandidateSchool getByCv_Candidate_Id(int candidateId);
 
-    List<CandidateSchool> getAllByCandidateId(int candidateId);
+    List<CandidateSchool> getAllByCv_Candidate_Id(int candidateId);
 
-    List<CandidateSchool> getAllByCandidateIdOrderByFinishDateDesc(int candidateId);
+    List<CandidateSchool> getAllByCv_Candidate_IdOrderByFinishDateDesc(int candidateId);
 }

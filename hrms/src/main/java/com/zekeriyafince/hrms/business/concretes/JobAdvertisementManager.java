@@ -59,7 +59,7 @@ public class JobAdvertisementManager implements JobAdvertisementService {
 
     @Override
     public DataResult<List<JobAdvertisement>> findAllByIsActiveTrueOrderByCreatedDateAsc() {
-        return new SuccessDataResult<List<JobAdvertisement>>(advertisementDao.findAllByIsActiveTrueOrderByCreatedDateAsc());
+        return new SuccessDataResult<List<JobAdvertisement>>(advertisementDao.findAllByIsActiveTrueOrderByCreateDateAsc());
     }
 
 }

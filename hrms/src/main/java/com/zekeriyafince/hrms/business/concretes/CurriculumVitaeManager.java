@@ -15,12 +15,14 @@ import com.zekeriyafince.hrms.entities.concretes.Candidate;
 import com.zekeriyafince.hrms.entities.concretes.CandidateCurriculumVitae;
 import com.zekeriyafince.hrms.entities.dtos.CurriculumVitaeWithCandidateDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author Zekeriya Furkan İNCE
  * @date 13.06.2021 23:20
  */
+@Service
 public class CurriculumVitaeManager implements CurriculumVitaeService {
 
     private CandidateCurriculumVitaeService candidateCurriculumVitaeService;

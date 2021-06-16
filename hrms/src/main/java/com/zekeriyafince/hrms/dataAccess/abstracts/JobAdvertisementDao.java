@@ -19,6 +19,6 @@ public interface JobAdvertisementDao extends JpaRepository<JobAdvertisement, Int
     @Query("Select new com.zekeriyafince.hrms.entities.dtos.JobAdvertisementWithEmployerDto(j.id, e.id) from Employer e inner join e.jobAdvertisements j")
     List<JobAdvertisement> getJobAdvertisementWithEmployerDetails();
     
-     List<JobAdvertisement> findAllByIsActiveTrueOrderByCreatedDateAsc();
+     List<JobAdvertisement> findAllByIsActiveTrueOrderByCreateDateAsc();
 
 }

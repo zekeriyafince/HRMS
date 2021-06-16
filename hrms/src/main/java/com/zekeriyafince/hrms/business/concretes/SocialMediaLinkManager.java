@@ -9,12 +9,14 @@ import com.zekeriyafince.hrms.dataAccess.abstracts.SocialMediaLinkDao;
 import com.zekeriyafince.hrms.entities.concretes.SocialMediaLink;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author Zekeriya Furkan İNCE
  * @date 13.06.2021 23:13
  */
+@Service
 public class SocialMediaLinkManager implements SocialMediaLinkService {
 
     private SocialMediaLinkDao socialMediaLinkDao;

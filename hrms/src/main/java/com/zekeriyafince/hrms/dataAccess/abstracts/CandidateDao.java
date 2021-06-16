@@ -14,7 +14,7 @@ public interface CandidateDao extends JpaRepository<Candidate, Integer> {
 
     boolean existsByNationalIdentityNumber(String nationalIdentityNumber);
 
-    Candidate getByUserId(int userId);
+    Candidate getById(int userId);
 
     Candidate getByNationalIdentityNumber(String nationalIdentityNumber);
 

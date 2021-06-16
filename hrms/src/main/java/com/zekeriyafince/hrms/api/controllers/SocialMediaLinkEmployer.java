@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 16.06.2021 14:04:33
  */
 @RestController
-@RequestMapping("/api/SocialMedias")
+@RequestMapping("/api/socialMedias")
 public class SocialMediaLinkEmployer {
 
     private SocialMediaLinkService socialMediaLinkService;

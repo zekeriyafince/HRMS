@@ -35,7 +35,7 @@ public class CandidateCurriculumVitae {
     private int id;
 
     @ManyToOne()
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @JoinColumn(name = "candidate_id", referencedColumnName = "user_id")
     private Candidate candidate;
 
     @Column(name = "img_url")

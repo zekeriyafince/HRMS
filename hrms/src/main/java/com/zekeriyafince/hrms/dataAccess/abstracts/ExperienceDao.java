@@ -12,9 +12,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface ExperienceDao extends JpaRepository<Experience, Integer> {
 
-    Experience getByCandidateId(int candidateId);
+    Experience getByCv_Candidate_Id(int candidateId);
 
-    List<Experience> getAllByCandidateId(int candidateId);
+    List<Experience> getAllByCv_Candidate_Id(int candidateId);
 
-    List<Experience> getAllByCandidateCurriculumVitae_CvIdOrderByFinishDateDesc(int cvId);
+    List<Experience> getAllByCv_IdOrderByFinishDateDesc(int cvId);
 }

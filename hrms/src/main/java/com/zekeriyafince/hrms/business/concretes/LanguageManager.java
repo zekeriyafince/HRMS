@@ -9,12 +9,14 @@ import com.zekeriyafince.hrms.dataAccess.abstracts.LanguageDAo;
 import com.zekeriyafince.hrms.entities.concretes.Language;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author Zekeriya Furkan İNCE
  * @date 13.06.2021 23:11
  */
+@Service
 public class LanguageManager implements LanguageService {
 
     private LanguageDAo languageDao;

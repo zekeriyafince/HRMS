@@ -11,8 +11,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface CandidateSkillDao extends JpaRepository<CandidateSkill, Integer> {
 
-    CandidateSkill getByCandidateId(int candidateId);
+    CandidateSkill getByCv_Candidate_Id(int candidateId);
 
-    List<CandidateSkill> getAllByCandidateId(int candidateId);
+    List<CandidateSkill> getAllByCv_Candidate_Id(int candidateId);
 
 }

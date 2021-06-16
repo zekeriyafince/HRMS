@@ -39,7 +39,7 @@ public class ExperienceManager implements ExperienceService {
     
     @Override
     public DataResult<List<Experience>> getAllByCandidateCurriculumVitae_CvIdOrderByFinishDateDesc(int cvId) {
-        return new SuccessDataResult<List<Experience>>(this.experienceDao.getAllByCandidateCurriculumVitae_CvIdOrderByFinishDateDesc(cvId), "Deneyim Bilgisi listelendi.");
+        return new SuccessDataResult<List<Experience>>(this.experienceDao.getAllByCv_IdOrderByFinishDateDesc(cvId), "Deneyim Bilgisi listelendi.");
     }
     
 }

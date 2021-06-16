@@ -42,7 +42,7 @@ public class CandidateSchoolManager implements CandidateSchoolService {
 
     @Override
     public DataResult<List<CandidateSchool>> getAllByCandidateCurriculumVitae_CvIdOrderByFinishDateDesc(int cvId) {
-        return new SuccessDataResult<List<CandidateSchool>>(this.candidateSchoolDao.getAllByCandidateIdOrderByFinishDateDesc(cvId), "Okul Bilgisi listelendi.");
+        return new SuccessDataResult<List<CandidateSchool>>(this.candidateSchoolDao.getAllByCv_Candidate_IdOrderByFinishDateDesc(cvId), "Okul Bilgisi listelendi.");
     }
 
 }
