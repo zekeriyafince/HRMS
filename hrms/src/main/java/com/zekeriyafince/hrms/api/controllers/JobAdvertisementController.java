@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Zekeriya Furkan İNCE
  * @date 07.06.2021 21:24
  */
-@RequestMapping(value = "/api/jobadvertisement")
+@RequestMapping(value = "/api/jobadvertisements")
 @RestController
 public class JobAdvertisementController {
 
