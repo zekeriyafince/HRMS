@@ -27,11 +27,6 @@ public class CandidateSchoolsController {
         this.candidateSchoolService = candidateSchoolService;
     }
 
-    @PostMapping("/add")
-    Result add(CandidateSchool candidateSchool) {
-        return this.candidateSchoolService.add(candidateSchool);
-    }
-
     @GetMapping("/getAll")
     DataResult<List<CandidateSchool>> getAll() {
         return this.candidateSchoolService.getAll();

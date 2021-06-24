@@ -41,8 +41,8 @@ public class CandidateCurriculumVitaeManager implements CandidateCurriculumVitae
     }
 
     @Override
-    public Result add(CurriculumVitaeWithCandidateDto cvDto) {
-        CandidateCurriculumVitae cv = this.modelMapper.map(cvDto, CandidateCurriculumVitae.class);
+    public Result add(CandidateCurriculumVitae cv) {
+
         this.candidateCurriculumVitaeDao.save(cv);
         return new SuccesResult("Resume has added");
     }

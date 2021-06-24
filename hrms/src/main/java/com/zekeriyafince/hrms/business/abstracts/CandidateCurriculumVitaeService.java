@@ -13,7 +13,7 @@ import java.util.List;
  */
 public interface CandidateCurriculumVitaeService {
 
-    Result add(CurriculumVitaeWithCandidateDto cv);
+    Result add(CandidateCurriculumVitae cv);
 
     DataResult<List<CandidateCurriculumVitae>> getAll();
 

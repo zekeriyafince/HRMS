@@ -1,7 +1,9 @@
 package com.zekeriyafince.hrms.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -41,7 +43,7 @@ public class Candidate extends User {
     @Column(name = "birth_date")
     private Date dateOfBirth;
 
-    //@JsonIgnore
-    @OneToMany(mappedBy = "candidate")
+    @JsonManagedReference
+    @OneToMany(mappedBy = "candidate", cascade = CascadeType.ALL)
     private List<CandidateCurriculumVitae> cv;
 }

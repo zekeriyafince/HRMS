@@ -1,10 +1,13 @@
 package com.zekeriyafince.hrms.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,6 +28,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "experiences")
+//@JsonIgnoreProperties({"hibernateLazyInitializer","handler","cv"})
 public class Experience {
 
     @Id
@@ -32,8 +36,8 @@ public class Experience {
     @Column(name = "id")
     private int id;
 
-    @ManyToOne()
-    @JsonProperty(access = Access.WRITE_ONLY)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
     @JoinColumn(name = "cv_id")
     private CandidateCurriculumVitae cv;
 

@@ -1,8 +1,11 @@
 package com.zekeriyafince.hrms.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.time.LocalDate;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,7 +29,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "candidate_curriculum_vitaes")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "cv"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class CandidateCurriculumVitae {
 
     @Id
@@ -36,6 +39,7 @@ public class CandidateCurriculumVitae {
 
     @ManyToOne()
     @JoinColumn(name = "candidate_id", referencedColumnName = "user_id")
+    @JsonBackReference
     private Candidate candidate;
 
     @Column(name = "img_url")
@@ -53,19 +57,24 @@ public class CandidateCurriculumVitae {
     @Column(name = "is_deleted")
     private boolean isDeleted;
 
-    @OneToMany(mappedBy = "cv")
+    @JsonManagedReference
+    @OneToMany(mappedBy = "cv", cascade = CascadeType.ALL)
     private List<CandidateSchool> candidateSchools;
 
-    @OneToMany(mappedBy = "cv")
+    @JsonManagedReference
+    @OneToMany(mappedBy = "cv", cascade = CascadeType.ALL)
     private List<CandidateSkill> candidateSkills;
 
-    @OneToMany(mappedBy = "cv")
+    @JsonManagedReference
+    @OneToMany(mappedBy = "cv", cascade = CascadeType.ALL)
     private List<Experience> experiences;
 
-    @OneToMany(mappedBy = "cv")
+    @JsonManagedReference
+    @OneToMany(mappedBy = "cv", cascade = CascadeType.ALL)
     private List<SocialMediaLink> socialMediaLinks;
 
-    @OneToMany(mappedBy = "cv")
+    @JsonManagedReference
+    @OneToMany(mappedBy = "cv", cascade = CascadeType.ALL)
     private List<Language> languages;
 
 }

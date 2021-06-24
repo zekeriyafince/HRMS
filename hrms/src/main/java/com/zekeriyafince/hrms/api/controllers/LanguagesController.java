@@ -27,11 +27,7 @@ public class LanguagesController {
         this.languageService = languageService;
     }
 
-    @PostMapping("/add")
-    Result add(Language language) {
-        return this.languageService.add(language);
-    }
-
+    
     @GetMapping("/getAll")
     DataResult<List<Language>> getAll() {
         return this.languageService.getAll();

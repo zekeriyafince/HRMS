@@ -27,11 +27,7 @@ public class ExperiencesController {
         this.experienceService = experienceService;
     }
 
-    @PostMapping("/add")
-    Result add(Experience experience) {
-        return this.experienceService.add(experience);
-    }
-
+    
     @GetMapping("/getAll")
     DataResult<List<Experience>> getAll() {
         return this.experienceService.getAll();

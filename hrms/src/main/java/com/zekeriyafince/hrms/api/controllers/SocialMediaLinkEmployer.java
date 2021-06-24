@@ -27,11 +27,7 @@ public class SocialMediaLinkEmployer {
         this.socialMediaLinkService = socialMediaLinkService;
     }
 
-    @PostMapping("/add")
-    Result add(SocialMediaLink socialMediaLink) {
-        return this.socialMediaLinkService.add(socialMediaLink);
-    }
-
+    
     @GetMapping("/getAll")
     DataResult<List<SocialMediaLink>> getAll() {
         return this.socialMediaLinkService.getAll();

@@ -27,11 +27,7 @@ public class CandidateSkillsController {
         this.candidateSkillService = candidateSkillService;
     }
 
-    @PostMapping("/add")
-    Result add(CandidateSkill candidateSkill) {
-        return this.candidateSkillService.add(candidateSkill);
-    }
-
+    
     @GetMapping("/getAll")
     DataResult<List<CandidateSkill>> getAll() {
         return this.candidateSkillService.getAll();

@@ -38,7 +38,7 @@ public class CandidateCurriculumVitaesController {
     }
 
     @PostMapping("/add")
-    public Result add(@RequestBody CurriculumVitaeWithCandidateDto cv) {
+    public Result add(@RequestBody CandidateCurriculumVitae cv) {
         return this.candidateCurriculumVitaeService.add(cv);
     }
 
