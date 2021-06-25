@@ -12,6 +12,6 @@ import org.springframework.data.jpa.repository.Query;
  */
 public interface CandidateCurriculumVitaeDao extends JpaRepository<CandidateCurriculumVitae, Integer> {
 
-    @Query("From CandidateCurriculumVitae where candidate.id=:candidateId")
-    List<CandidateCurriculumVitae> getByCandidate(int candidateId);
+    //@Query("From CandidateCurriculumVitae where candidate.id=:candidateId")
+    List<CandidateCurriculumVitae> getByCandidate_Id(int candidateId);
 }

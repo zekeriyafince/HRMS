@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -43,8 +44,8 @@ public class CandidateCurriculumVitaesController {
     }
 
     @PostMapping("/getByCvIdForCandidateId")
-    public DataResult<List<CandidateCurriculumVitae>> getByCandidateCurriculumVitaeIdForCandidateId(int candidateId) {
-
-        return this.candidateCurriculumVitaeService.getByCandidateCurriculumVitaeIdForCandidateId(0);
+    public DataResult<List<CandidateCurriculumVitae>> getByCandidateCurriculumVitaeIdForCandidateId(@RequestParam("candidateId") int candidateId) {
+        //System.out.println(candidateId);
+        return this.candidateCurriculumVitaeService.getByCandidateCurriculumVitaeIdForCandidateId(candidateId);
     }
 }
