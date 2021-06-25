@@ -49,6 +49,6 @@ public class CandidateCurriculumVitaeManager implements CandidateCurriculumVitae
 
     @Override
     public DataResult<List<CandidateCurriculumVitae>> getByCandidateCurriculumVitaeIdForCandidateId(int candidateId) {
-        return new SuccessDataResult<List<CandidateCurriculumVitae>>(this.candidateCurriculumVitaeDao.getByCandidateId(candidateId));
+        return new SuccessDataResult<List<CandidateCurriculumVitae>>(this.candidateCurriculumVitaeDao.getByCandidate(1));
     }
 }

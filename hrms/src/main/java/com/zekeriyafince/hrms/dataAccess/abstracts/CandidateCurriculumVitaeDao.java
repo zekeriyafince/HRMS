@@ -3,6 +3,7 @@ package com.zekeriyafince.hrms.dataAccess.abstracts;
 import com.zekeriyafince.hrms.entities.concretes.CandidateCurriculumVitae;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 /**
  *
@@ -11,5 +12,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface CandidateCurriculumVitaeDao extends JpaRepository<CandidateCurriculumVitae, Integer> {
 
-    List<CandidateCurriculumVitae> getByCandidateId(int candidateId);
+    @Query("From CandidateCurriculumVitae where candidate.id=:candidateId")
+    List<CandidateCurriculumVitae> getByCandidate(int candidateId);
 }
