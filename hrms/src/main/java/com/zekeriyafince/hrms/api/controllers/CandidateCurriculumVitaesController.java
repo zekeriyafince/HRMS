@@ -43,9 +43,9 @@ public class CandidateCurriculumVitaesController {
         return this.candidateCurriculumVitaeService.add(cv);
     }
 
-    @PostMapping("/getByCvIdForCandidateId")
-    public DataResult<List<CandidateCurriculumVitae>> getByCandidateCurriculumVitaeIdForCandidateId(@RequestParam("candidateId") int candidateId) {
+    @PostMapping("/getByCandidateId")
+    public DataResult<List<CandidateCurriculumVitae>> getByCandidateId(@RequestParam("candidateId") int candidateId) {
         //System.out.println(candidateId);
-        return this.candidateCurriculumVitaeService.getByCandidateCurriculumVitaeIdForCandidateId(candidateId);
+        return this.candidateCurriculumVitaeService.getByCandidateId(candidateId);
     }
 }
